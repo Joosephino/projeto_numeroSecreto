@@ -25,6 +25,26 @@ public class DesafioContaBancaria {
         while (opcao != 4){
             System.out.println(menu);
             opcao = leitura.nextInt();
+        
+            if (opcao == 1){
+                System.out.println("O saldo é: " + saldoDaConta);
+            } else if (opcao == 2){
+                System.out.println("Digite o valor a ser transferido: ");
+                double valor = leitura.nextInt();
+                if (valor > saldoDaConta) {
+                    System.out.println("Não há saldo suficiente para transferência!");
+                } else {
+                    saldoDaConta -= valor;
+                    System.out.println("Novo saldo: " + saldoDaConta);
+                }
+            } else if (opcao == 3) {
+                System.out.println("Valor recebido: ");
+                double valor = leitura.nextDouble();
+                saldoDaConta += valor;
+                System.out.println("Novo saldo: " + saldoDaConta);
+            } else if (opcao != 4) {
+                System.out.println("Opção inválida!");
+            }        
         }
     }
 }
